@@ -13,6 +13,12 @@ namespace First_dotNet_Application.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() { Name = "Bladerunner" };
+
+
+            //return Content("Hello World");
+            //return HttpNotFound();
+            //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
+
             return View(movie);
         }
     }
