@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using First_dotNet_Application.Models;
+using First_dotNet_Application.ViewModels;
 
 namespace First_dotNet_Application.Controllers
 {
@@ -12,14 +13,30 @@ namespace First_dotNet_Application.Controllers
         // GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie() { Name = "Bladerunner" };
 
+
+
+
+
+
+            var movie = new Movie() { Name = "Bladerunner" };
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "Customer 1" },
+                new Customer { Name = "Customer 2" }
+            };
+
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
 
             //return Content("Hello World");
             //return HttpNotFound();
             //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
 
-            return View(movie);
+            return View(viewModel);
         }
 
         [Route("movies/released/{year}/{month:regex(\\d{4}):range(1,12)}")]
