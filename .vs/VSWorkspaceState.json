@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FirstTest",
+    "\\FirstTest\\First dotNet Application",
+    "\\FirstTest\\First dotNet Application\\First dotNet Application",
+    "\\FirstTest\\First dotNet Application\\First dotNet Application\\Controllers",
+    "\\FirstTest\\First dotNet Application\\First dotNet Application\\Views",
+    "\\FirstTest\\First dotNet Application\\First dotNet Application\\Views\\Shared"
   ],
+  "SelectedNode": "\\FirstTest\\First dotNet Application\\First dotNet Application\\ViewModels",
   "PreviewInSolutionExplorer": false
 }
