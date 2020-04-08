@@ -14,11 +14,6 @@ namespace First_dotNet_Application.Controllers
         public ActionResult Random()
         {
 
-
-
-
-
-
             var movie = new Movie() { Name = "Bladerunner" };
             var customers = new List<Customer>
             {

@@ -1,0 +1,22 @@
+﻿@model First_dotNet_Application.ViewModels.RandomMovieViewModel
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+
+        <ul>
+            @foreach (var customer in Model.Customers)
+            {
+                <li>@customer.Name</li>
+            }
+        </ul>
+
+</div>
+
