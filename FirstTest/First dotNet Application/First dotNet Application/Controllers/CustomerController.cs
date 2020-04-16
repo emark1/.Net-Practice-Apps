@@ -28,24 +28,31 @@ namespace First_dotNet_Application.Controllers
         //    return View(viewModel);
         //}
 
-
         public ActionResult Customers()
         {
 
-            var movie = new Movie() { Name = "Bladerunner" };
-            var customers = new List<Customer>
-            {
-                new Customer { Name = "Customer 1" },
-                new Customer { Name = "Customer 2" }
-            };
 
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
 
-            return View(viewModel);
+            var customers = GetCustomers();
+
+
+
+            return View(customers);
+        }
+        public ActionResult Details(int id)
+        {
+            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            return View(customer);
+        }
+
+        private IEnumerable<Customer> GetCustomers()
+        {
+            return new List<Customer>
+            {
+                new Customer { Id = 1, Name = "John Smith" },
+                new Customer { Id = 2, Name = "Mary Williams" }
+            };
         }
     }
 }
+

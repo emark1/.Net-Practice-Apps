@@ -1,4 +1,4 @@
-﻿@model First_dotNet_Application.ViewModels.RandomMovieViewModel
+﻿@model IEnumerable<First_dotNet_Application.Models.Customer>
 
 @{
     ViewBag.Title = "Customers";
@@ -11,12 +11,26 @@
     <h4>Customer</h4>
     <hr />
 
-        <ul>
-            @foreach (var customer in Model.Customers)
-            {
-                <li>@customer.Name</li>
-            }
-        </ul>
+    <ul>
+
+    </ul>
 
 </div>
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customers</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+        <tr>
+            <td>@Html.ActionLink(customer.Name, "Details", "Customer", new { id = customer.Id }, null)</td>
+        </tr>
+        }
+    </tbody>
+</table>
 

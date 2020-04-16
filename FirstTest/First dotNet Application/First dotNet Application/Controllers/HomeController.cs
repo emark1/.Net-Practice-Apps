@@ -22,7 +22,7 @@ namespace First_dotNet_Application.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Changing the Message.";
 
             return View();
         }

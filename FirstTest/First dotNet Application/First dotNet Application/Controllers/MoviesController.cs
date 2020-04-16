@@ -17,8 +17,9 @@ namespace First_dotNet_Application.Controllers
             var movie = new Movie() { Name = "Bladerunner" };
             var customers = new List<Customer>
             {
-                new Customer { Name = "Customer 1" },
-                new Customer { Name = "Customer 2" }
+                new Customer { Name = "Tester McTesterson", Id = 1 },
+                new Customer { Name = "Teddy Bridgewater", Id = 2 }
+
             };
 
             var viewModel = new RandomMovieViewModel
@@ -59,6 +60,21 @@ namespace First_dotNet_Application.Controllers
             }
 
             return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
+            {
+                new Movie { Id = 1, Name = "THE ROCK" },
+                new Movie { Id = 2, Name = "Cat in the Hat" }
+            };
+        }
+
+        public ActionResult Movies()
+        {
+            var movieList = GetMovies();
+            return View(movieList);
         }
 
     }
